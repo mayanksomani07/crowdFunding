@@ -1,3 +1,4 @@
+//USED FOR THE BUTTONS DESIGN i.e. "CAMPAIGNS, CREATE CAMPAIGN, DASHBOARD" in the center of the pagee.
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
