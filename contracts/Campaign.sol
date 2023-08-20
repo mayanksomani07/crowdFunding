@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Unlicensed
+//REMIX IDE
 
-pragma solidity >0.7.0 <=0.9.0;
+pragma solidity >0.7.0 <=0.9.0; // solidity version
 
 contract CampaignFactory {
     address[] public deployedCampaigns;
@@ -43,13 +44,13 @@ contract CampaignFactory {
 }
 
 
-contract Campaign {
-    string public title;
-    uint public requiredAmount;
-    string public image;
-    string public story;
-    address payable public owner;
-    uint public receivedAmount;
+contract Campaign {              
+    string public title;          //Declaring state variables
+    uint public requiredAmount;   //Declaring state variables
+    string public image;          //Declaring state variables
+    string public story;          //Declaring state variables
+    address payable public owner; //Declaring state variables
+    uint public receivedAmount;   //Declaring state variables
 
     event donated(address indexed donar, uint indexed amount, uint indexed timestamp);
 
