@@ -6,7 +6,7 @@ pragma solidity >0.7.0 <=0.9.0; // solidity version
 contract CampaignFactory {
     address[] public deployedCampaigns;
 
-    event campaignCreated(
+    event campaignCreated(          //In a single event max "3 indexed" can be used. "Indexed" is used to filter data from front-end.
         string title,
         uint requiredAmount,
         address indexed owner,
@@ -52,7 +52,7 @@ contract Campaign {
     address payable public owner; //Declaring state variables in Storage (drive), permanent
     uint public receivedAmount;   //Declaring state variables in Storage (drive), permanent
 
-    event donated(address indexed donar, uint indexed amount, uint indexed timestamp);
+    event donated(address indexed donar, uint indexed amount, uint indexed timestamp);  //Concept of EVENTS in solidity
 
     constructor(
         string memory campaignTitle, // Declaring variable in Memory (RAM), temporary 
@@ -69,7 +69,7 @@ contract Campaign {
     }
 
     function donate() public payable {
-        require(requiredAmount > receivedAmount, "required amount fullfilled");
+        require(requiredAmount > receivedAmount, "required amount fullfilled");  //condition for donation to occur 
         owner.transfer(msg.value);
         receivedAmount += msg.value;
         emit donated(msg.sender, msg.value, block.timestamp);
