@@ -45,21 +45,21 @@ contract CampaignFactory {
 
 
 contract Campaign {              
-    string public title;          //Declaring state variables
-    uint public requiredAmount;   //Declaring state variables
-    string public image;          //Declaring state variables
-    string public story;          //Declaring state variables
-    address payable public owner; //Declaring state variables
-    uint public receivedAmount;   //Declaring state variables
+    string public title;          //Declaring state variables in Storage (drive), permanent 
+    uint public requiredAmount;   //Declaring state variables in Storage (drive), permanent
+    string public image;          //Declaring state variables in Storage (drive), permanent
+    string public story;          //Declaring state variables in Storage (drive), permanent
+    address payable public owner; //Declaring state variables in Storage (drive), permanent
+    uint public receivedAmount;   //Declaring state variables in Storage (drive), permanent
 
     event donated(address indexed donar, uint indexed amount, uint indexed timestamp);
 
     constructor(
-        string memory campaignTitle, 
-        uint requiredCampaignAmount, 
-        string memory imgURI,
-        string memory storyURI,
-        address campaignOwner
+        string memory campaignTitle, // Declaring variable in Memory (RAM), temporary 
+        uint requiredCampaignAmount, // Declaring variable in Memory (RAM), temporary 
+        string memory imgURI,        // Declaring variable in Memory (RAM), temporary 
+        string memory storyURI,      // Declaring variable in Memory (RAM), temporary 
+        address campaignOwner        // Declaring variable in Memory (RAM), temporary 
     ) {
         title = campaignTitle;
         requiredAmount = requiredCampaignAmount;
