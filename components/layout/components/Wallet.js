@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ethers } from "ethers";
 import { useState } from "react";
 
-
+//adding metamask in the extension of the new user landing into our webpage.
 const networks = {
   polygon: {
     chainId: `0x${Number(80001).toString(16)}`,
@@ -23,7 +23,7 @@ const Wallet = () => {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState("");
 
-
+ //WALLET CONNECTION from our website
   const connectWallet = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -52,7 +52,7 @@ const Wallet = () => {
     </ConnectWalletWrapper>
   );
 };
-
+//Designing of the WALLET BUTTION
 const ConnectWalletWrapper = styled.div`
   display: flex;
   align-items: center;
