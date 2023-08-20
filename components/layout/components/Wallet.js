@@ -1,3 +1,4 @@
+//WALLET CONNECTION and designing of the WALLET BUTTON before Theme Button.
 import styled from "styled-components";
 import { ethers } from "ethers";
 import { useState } from "react";
