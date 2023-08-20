@@ -23,7 +23,7 @@ const Wallet = () => {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState("");
 
- //WALLET CONNECTION from our website
+ //WALLET CONNECTION to our website
   const connectWallet = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -52,7 +52,7 @@ const Wallet = () => {
     </ConnectWalletWrapper>
   );
 };
-//Designing of the WALLET BUTTION
+//Designing and styling of the WALLET BUTTION
 const ConnectWalletWrapper = styled.div`
   display: flex;
   align-items: center;
