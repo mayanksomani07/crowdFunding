@@ -1,8 +1,9 @@
+//WALLET CONNECTION and designing of the WALLET BUTTON before Theme Button.
 import styled from "styled-components";
 import { ethers } from "ethers";
 import { useState } from "react";
 
-
+//adding metamask in the extension of the new user landing into our webpage.
 const networks = {
   polygon: {
     chainId: `0x${Number(80001).toString(16)}`,
@@ -22,7 +23,7 @@ const Wallet = () => {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState("");
 
-
+ //WALLET CONNECTION to our website
   const connectWallet = async () => {
     await window.ethereum.request({ method: "eth_requestAccounts" });
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -46,12 +47,12 @@ const Wallet = () => {
 
   return (
     <ConnectWalletWrapper onClick={connectWallet}>
-      {balance == '' ? <Balance></Balance> : <Balance>{balance.slice(0,4)} Matic</Balance> }
-      {address == '' ? <Address>Connect Wallet</Address> : <Address>{address.slice(0,6)}...{address.slice(39)}</Address>}
+      {balance == '' ? <Balance></Balance> : <Balance>{balance.slice(0,4)} Matic</Balance> }  //SHOW THE BALANCE OF THE WALLET IN THE BUTTON
+      {address == '' ? <Address>Connect Wallet</Address> : <Address>{address.slice(0,6)}...{address.slice(39)}</Address>}  //SHOW THE ADDRESS OF THE WALLET
     </ConnectWalletWrapper>
   );
 };
-
+//Designing and styling of the WALLET BUTTION
 const ConnectWalletWrapper = styled.div`
   display: flex;
   align-items: center;

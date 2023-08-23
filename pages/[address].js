@@ -1,3 +1,4 @@
+//in this, code is written which is displayed once we click on "GO TO CAMAPIGN" button in the "CAMPAIGNS" page of the web.
 import styled from "styled-components";
 import Image from "next/image";
 import {ethers} from 'ethers';

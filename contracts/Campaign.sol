@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: Unlicensed
+//REMIX IDE
 
-pragma solidity >0.7.0 <=0.9.0;
+pragma solidity >0.7.0 <=0.9.0; // solidity version
 
 contract CampaignFactory {
     address[] public deployedCampaigns;
 
-    event campaignCreated(
+    event campaignCreated(          //In a single event max "3 indexed" can be used. "Indexed" is used to filter data from front-end.
         string title,
         uint requiredAmount,
         address indexed owner,
@@ -43,22 +44,22 @@ contract CampaignFactory {
 }
 
 
-contract Campaign {
-    string public title;
-    uint public requiredAmount;
-    string public image;
-    string public story;
-    address payable public owner;
-    uint public receivedAmount;
+contract Campaign {              
+    string public title;          //Declaring state variables in Storage (drive), permanent 
+    uint public requiredAmount;   //Declaring state variables in Storage (drive), permanent
+    string public image;          //Declaring state variables in Storage (drive), permanent
+    string public story;          //Declaring state variables in Storage (drive), permanent
+    address payable public owner; //Declaring state variables in Storage (drive), permanent
+    uint public receivedAmount;   //Declaring state variables in Storage (drive), permanent
 
-    event donated(address indexed donar, uint indexed amount, uint indexed timestamp);
+    event donated(address indexed donar, uint indexed amount, uint indexed timestamp);  //Concept of EVENTS in solidity
 
     constructor(
-        string memory campaignTitle, 
-        uint requiredCampaignAmount, 
-        string memory imgURI,
-        string memory storyURI,
-        address campaignOwner
+        string memory campaignTitle, // Declaring variable in Memory (RAM), temporary 
+        uint requiredCampaignAmount, // Declaring variable in Memory (RAM), temporary 
+        string memory imgURI,        // Declaring variable in Memory (RAM), temporary 
+        string memory storyURI,      // Declaring variable in Memory (RAM), temporary 
+        address campaignOwner        // Declaring variable in Memory (RAM), temporary 
     ) {
         title = campaignTitle;
         requiredAmount = requiredCampaignAmount;
@@ -68,7 +69,7 @@ contract Campaign {
     }
 
     function donate() public payable {
-        require(requiredAmount > receivedAmount, "required amount fullfilled");
+        require(requiredAmount > receivedAmount, "required amount fullfilled");  //condition for donation to occur 
         owner.transfer(msg.value);
         receivedAmount += msg.value;
         emit donated(msg.sender, msg.value, block.timestamp);

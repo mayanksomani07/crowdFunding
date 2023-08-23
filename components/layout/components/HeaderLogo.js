@@ -1,3 +1,4 @@
+//USED TO SHOW THE WORD "CROWDFUNDING"
 import styled from 'styled-components';
 
 const HeaderLogo = () => {

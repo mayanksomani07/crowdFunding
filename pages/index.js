@@ -1,3 +1,4 @@
+//Code for the main CAMAPIGNS tab of the home page
 import styled from 'styled-components';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';

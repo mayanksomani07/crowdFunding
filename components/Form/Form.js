@@ -1,3 +1,4 @@
+//Form state management and main form page
 import styled from 'styled-components';
 import FormLeftWrapper from './Components/FormLeftWrapper'
 import FormRightWrapper from './Components/FormRightWrapper'
